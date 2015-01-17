@@ -50,13 +50,15 @@ void setup(char * string)
 void main()
 {
     
-    setup("Hello");
+    int a;
+    setup("Hellp");
     printf("Sending message to kernel\n");
     sendmsg(sock_fd, &msg, 0);
     printf("Waiting for message from kernel\n");
 
     /* Read message from kernel */
     recvmsg(sock_fd, &msg, 0);
-    printf("Received message payload: %s\n", NLMSG_DATA(nlh));
+    //printf("Received message payload: %s\n", NLMSG_DATA(nlh));
+    printf("%lx\n", &a);
     close(sock_fd);
 }
