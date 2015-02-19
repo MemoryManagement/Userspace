@@ -50,12 +50,11 @@ void setup(char * string)
 void main()
 {
     
-    int a;
+    char a[20] = "Saranno uguali?";
     char address[64];
-    a = 12345;
-    sprintf(address, "%lu", &a);
+    sprintf(address, "%lu", a);
     setup(address);
-    printf("%lx\n", &a);
+    printf("%lx\n", a);
     printf("Sending message to kernel\n");
     sendmsg(sock_fd, &msg, 0);
     printf("Waiting for message from kernel\n");
