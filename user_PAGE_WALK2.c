@@ -54,10 +54,11 @@ void main()
     char address[64];
     sprintf(address, "%lu", a);
     setup(address);
-    printf("%lx\n", a);
+    printf("L'indirizzo che verrà spedito è 0x%16.16lx\n", a);
+    printf("L'indirizzo è la testa della stringa: %s\n", a);
     printf("Sending message to kernel\n");
     sendmsg(sock_fd, &msg, 0);
-    printf("Waiting for message from kernel\n");
+    //printf("Waiting for message from kernel\n");
 
     /* Read message from kernel */
     recvmsg(sock_fd, &msg, 0);
